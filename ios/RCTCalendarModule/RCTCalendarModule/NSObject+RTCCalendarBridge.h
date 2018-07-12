@@ -6,8 +6,8 @@
 //  Copyright © 2018年 章鹏程. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <React/RCTBridgeModule.h>
 
-@interface NSObject ()
-
+@interface RCT_EXTERN_MODULE(RCTCalendarModule, NSObject)
+    RCT_EXTERN_METHOD(addEvent:(NSString *)name location:(NSString *)location date:(nonnull NSNumber *)date)
 @end

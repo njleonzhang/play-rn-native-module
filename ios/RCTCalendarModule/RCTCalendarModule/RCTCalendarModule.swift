@@ -9,5 +9,7 @@ import Foundation
 
 @objc(RCTCalendarModule)
 class RCTCalendarModule: NSObject {
-    
+    @objc func test(name: String) {
+        print(name);
+    }
 }

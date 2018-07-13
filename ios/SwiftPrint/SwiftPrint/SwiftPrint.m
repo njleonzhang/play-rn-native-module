@@ -9,11 +9,16 @@
 #import <React/RCTBridgeModule.h>
 
 @interface RCT_EXTERN_MODULE(SwiftPrint, NSObject)
-RCT_EXTERN_METHOD(test:(NSString*)str);
+RCT_EXTERN_METHOD(test:(NSString*)str callback: (RCTResponseSenderBlock) callback);
 
 // prevent warning
 + (BOOL)requiresMainQueueSetup
 {
     return YES;
+}
+
+- (NSDictionary *)constantsToExport
+{
+    return @{ @"firstDayOfTheWeek": @"Monday" };
 }
 @end

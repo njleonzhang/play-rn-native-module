@@ -12,12 +12,19 @@
 
 RCT_EXPORT_MODULE();
 
--(void) test: (NSString*) string {
+RCT_EXPORT_METHOD(test1: (NSString*) string callback: (RCTResponseSenderBlock) callback) {
     NSLog(string);
+    callback(@[@1,  @{@"x":@1, @"y":@2, @"z":@3, @"date": @([[NSDate date] timeIntervalSince1970]) }]);
 }
 
-RCT_EXPORT_METHOD(test1: (NSString*) string) {
-    NSLog(string);
+// prevent warning
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
 }
 
+- (NSDictionary *)constantsToExport
+{
+    return @{ @"firstDayOfTheWeek": @"Monday" };
+}
 @end

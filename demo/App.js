@@ -16,8 +16,14 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-NativeModules.Print.test1('fuck')
-NativeModules.SwiftPrint.test('you')
+NativeModules.Print.test1('fuck', (p1, p2) => {
+  console.log(p1, p2)
+})
+NativeModules.SwiftPrint.test('you', (p1, p2) => {
+  console.log(p1, p2)
+})
+
+console.log(NativeModules.Print.firstDayOfTheWeek, NativeModules.SwiftPrint.firstDayOfTheWeek)
 
 type Props = {};
 export default class App extends Component<Props> {

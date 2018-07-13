@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 
-@interface Print : NSObject
+@interface Print : NSObject <RCTBridgeModule>
 -(void) test: (NSString*) string;
 @end

@@ -9,7 +9,15 @@
 #import "Print.h"
 
 @implementation Print
+
+RCT_EXPORT_MODULE();
+
 -(void) test: (NSString*) string {
     NSLog(string);
 }
+
+RCT_EXPORT_METHOD(test1: (NSString*) string) {
+    NSLog(string);
+}
+
 @end

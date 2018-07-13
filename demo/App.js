@@ -17,6 +17,7 @@ const instructions = Platform.select({
 });
 
 NativeModules.Print.test1('fuck')
+NativeModules.SwiftPrint.test('you')
 
 type Props = {};
 export default class App extends Component<Props> {

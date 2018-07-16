@@ -16,14 +16,19 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-NativeModules.Print.test1('fuck', (p1, p2) => {
-  console.log(p1, p2)
-})
-NativeModules.SwiftPrint.test('you', (p1, p2) => {
-  console.log(p1, p2)
-})
+if (Platform.OS === 'ios') {
+  NativeModules.Print.test1('fuck', (p1, p2) => {
+    console.log(p1, p2)
+  })
+  NativeModules.SwiftPrint.test('you', (p1, p2) => {
+    console.log(p1, p2)
+  })
 
-console.log(NativeModules.Print.firstDayOfTheWeek, NativeModules.SwiftPrint.firstDayOfTheWeek)
+  console.log(NativeModules.Print.firstDayOfTheWeek, NativeModules.SwiftPrint.firstDayOfTheWeek)
+} else {
+  console.log(NativeModules.Toast)
+  NativeModules.Toast.show('hello', NativeModules.Toast.LONG)
+}
 
 type Props = {};
 export default class App extends Component<Props> {
